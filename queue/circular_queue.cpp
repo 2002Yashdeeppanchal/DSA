@@ -15,9 +15,9 @@ class CircularQueue{
 
     // Enqueues 'X' into the queue. Returns true if it gets pushed into the stack, and false otherwise.
     bool enqueue(int value){
-        if((front==0 and rear==size-1) or (rear==((front-1)%(size-1)))){
+        if((front==0 and rear==size-1) or (rear==(front-1))){
             //ya to front 0 pr ho and same time pr rear last pr ho to list full hai
-            //or rear ya to front se ek phle ho ghum ke aage aagi ho
+            //or rear ya to front se ek phle ho ghum ke aage aagi ho  ( [_ _ _ R F _ _ _] )
             return false;
         }
         else if(front==-1){
