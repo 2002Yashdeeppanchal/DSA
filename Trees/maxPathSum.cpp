@@ -18,7 +18,8 @@ its just a variation of the problem we did before that is diameter of a binary t
         
         //we update the ans by root ki val and left ka sum and right ka sum here also we are considering the root as the curving point of the path
         ans=max(ans,root->val+leftsum+rightsum);
-    
+        
+        //vhi ki apn jis node pr hai usse aage konsa path le to agr left ka sum jyda hai to left me ni to right me 
         return (root->val+max(leftsum,rightsum));
     }
     
