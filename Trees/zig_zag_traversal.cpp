@@ -10,7 +10,8 @@ vector<vector<int>> levelOrder(TreeNode* root) {
             int sz=q.size();
             vector<int>row(sz);
             for(int i=0;i<sz;i++){
-                int index=islefttoright ? i : sz-i-1;  //if left to right true then we insert normally aage se agr false to reverse me
+                int index=islefttoright ? i : sz-i-1;  //if left to right true then we insert normally aage se agr false
+                                                       // to reverse me
                 row[index]=q.front()->val;
                 if(q.front()->left!=NULL){
                     q.push(q.front()->left);
