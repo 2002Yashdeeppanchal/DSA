@@ -1,4 +1,5 @@
-implementation is bit tricky but the sole concept is easy to understand we assign every node a vertical and level then for each vertical their are several level so if a level has overlapping nodes then sort it
+implementation is bit tricky but the sole concept is easy to understand we assign every node a vertical and level then
+for each vertical their are several level so if a level has overlapping nodes then sort it
 
 
 vector<vector<int>> verticalTraversal(TreeNode* root) {
