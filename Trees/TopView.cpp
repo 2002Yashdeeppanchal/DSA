@@ -1,4 +1,5 @@
-we assign vertical to each node and do level order traversal and keep a map<int,int> first int denotes the vertical and second the val of the node and if vertical already exist then we dont update
+we assign vertical to each node and do level order traversal and keep a map<int,int> first int denotes the vertical 
+and second the val of the node and if vertical already exist then we dont update
 
 
 vector<int> getTopView(TreeNode<int> *root) {
@@ -10,7 +11,8 @@ vector<int> getTopView(TreeNode<int> *root) {
     while(!q.empty()){
         auto p=q.front();
         q.pop();
-        if(m.find(p.second)==m.end())m[p.second]=p.first->val;//if the node corresponding to the vertical is not there in the map then we first time visit it so update
+        if(m.find(p.second)==m.end())m[p.second]=p.first->val;//if the node corresponding to the vertical is not there 
+                                                              //in the map then we first time visit it so update
         if(p.first->left){
             q.push({p.first->left,p.second-1});
         }
