@@ -10,7 +10,8 @@ int widthOfBinaryTree(TreeNode* root) {
             int mini=q.front().second;
             int first,last;
             for(int i=0;i<sz;i++){
-                int id=q.front().second-mini;//hr baar mini one ni hoga ye to clear hai na, sbse left most vala hai mini uska index kuch bhi ho skta hai
+                int id=q.front().second-mini;//hr baar mini one ni hoga ye to clear hai na, sbse left most vala hai mini 
+                                             //uska index kuch bhi ho skta hai
                 if(i==0)first=id;
                 if(i==sz-1)last=id;
                 if(q.front().first->left){
