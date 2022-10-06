@@ -8,7 +8,7 @@ vector<int> inorderTraversal(TreeNode* root) {
             }
             else{
                 TreeNode* temp=curr->left;
-                while(temp->right!=nullptr and temp->right!=curr){//temp is curr's left and move mark the thread from temp's right most node to curr and this second condition is that if the thread is already exits then we compelte the circle to curr again that is we not wanted
+                while(temp->right!=nullptr and temp->right!=curr){//temp is curr's left and move mark the thread  from temp's right most node to curr and this second condition is that if the thread is already exits then we compelte the circle to curr again that is we not wanted
                     temp=temp->right;
                 }
                 if(temp->right==nullptr){//if the thread is not exits then make it
