@@ -9,10 +9,10 @@ void heapify(int arr[],int n,int i){
     int leftchildindx=2*i;
     int rightchildindx=(2*i)+1;
 
-    if(leftchildindx<n and arr[currlargest]<arr[leftchildindx]){
+    if(leftchildindx<=n and arr[currlargest]<arr[leftchildindx]){
         currlargest=leftchildindx;
     }
-    if(rightchildindx<n and arr[rightchildindx]>arr[currlargest]){
+    if(rightchildindx<=n and arr[rightchildindx]>arr[currlargest]){
         currlargest=rightchildindx;
     }
 
@@ -36,10 +36,10 @@ void heapify(int arr[],int n,int i){
     int leftchildindx=2*i;
     int rightchildindx=(2*i)+1;
 
-    if(leftchildindx<n and arr[currsmallest]>arr[leftchildindx]){
+    if(leftchildindx<=n and arr[currsmallest]>arr[leftchildindx]){
         currsmallest=leftchildindx;
     }
-    if(rightchildindx<n and arr[rightchildindx]<arr[currsmallest]){
+    if(rightchildindx<=n and arr[rightchildindx]<arr[currsmallest]){
         currsmallest=rightchildindx;
     }
 
