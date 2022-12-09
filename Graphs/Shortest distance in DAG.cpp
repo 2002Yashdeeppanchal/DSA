@@ -27,14 +27,14 @@ class Solution {
         
         for(int i=0;i<n;i++){
             if(!vis[i]){
-                toposort(i,vis,adj,st);
+                toposort(i,vis,adj,st);//tc - O(v+e)
             }
         }
         
         //do the distance relaxing stuffs
         vector<int> dist(n,1e9);
         dist[0]=0;
-        
+        //tc - O(v+e)
         while(!st.empty()){
             int node=st.top();
             st.pop();
