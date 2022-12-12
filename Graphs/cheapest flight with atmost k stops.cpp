@@ -17,6 +17,9 @@ class Solution {
         
         vector<int>dist(n,1e9);
         dist[src]=0;
+      
+      //time complexity is that we use simple dijkstra here without pq so log v factor is removed so
+      //TC -> O(E) or O(flights.size())
         
         while(!q.empty()){
             auto it = q.front();
