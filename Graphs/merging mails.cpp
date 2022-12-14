@@ -61,7 +61,7 @@ class Solution{
         DisjointSet ds(n);
         
         unordered_map<string,int>mapmailnode;
-        
+        //create mapping between mail to which number it belongs
         for(int i=0;i<n;i++){
             for(int j=1;j<accounts[i].size();j++){
                 string mail=accounts[i][j];
@@ -69,13 +69,13 @@ class Solution{
                     mapmailnode[mail]=i;
                 }
                 else{
-                    ds.unionbysize(mapmailnode[mail],i);
+                    ds.unionbysize(mapmailnode[mail],i);//if this mail belong already to a number of person then create a link between them
                 }
             }
         }
         
         vector<vector<string>> ans(n);
-        
+        //har mail to uske maalik(ultimate parent) ko dedo
         for(auto it : mapmailnode){
             string mail=it.first;
             int node=ds.findUparent(it.second);
@@ -90,7 +90,7 @@ class Solution{
             }
             sort(ans[i].begin(),ans[i].end());
             vector<string>temp;
-            temp.push_back(accounts[i][0]);
+            temp.push_back(accounts[i][0]);//phle maalik ka naam daal do then uske mails
             for(auto it : ans[i]){
                 temp.push_back(it);
             }
