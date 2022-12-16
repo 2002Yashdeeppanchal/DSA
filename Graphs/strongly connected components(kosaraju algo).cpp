@@ -25,6 +25,7 @@ class Solution
     int kosaraju(int v, vector<int> adj[])
     {
       //sort all the nodes with their finishing time
+	    //O(v+E)
         vector<int> vis(v,0);
         stack<int>st;
         for(int i=0;i<v;i++){
@@ -34,6 +35,7 @@ class Solution
         }
         
       //reverse the graph
+	    //O(v+e)
         vector<int> revadj[v];
         for(int i=0;i<v;i++){
             for(auto it : adj[i]){
@@ -49,6 +51,7 @@ class Solution
         
       
       //do simple dfs
+	    //O(v+e)
         int scc=0;
         while(!st.empty()){
             int node=st.top();
