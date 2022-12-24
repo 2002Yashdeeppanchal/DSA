@@ -1,3 +1,5 @@
+https://www.codingninjas.com/codestudio/problems/maximum-sum-of-non-adjacent-elements_843261?source=youtube&campaign=striver_dp_videos&utm_source=youtube&utm_medium=affiliate&utm_campaign=striver_dp_videos
+
 #include <bits/stdc++.h>
 int f(int ind,vector<int> &nums,vector<int> &dp){
     if(ind==0)return nums[0];
