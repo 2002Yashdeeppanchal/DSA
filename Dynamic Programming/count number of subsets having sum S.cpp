@@ -24,32 +24,36 @@ int findWays(vector<int> &num, int tar)
     dp[0][0]=1;
     dp[0][num[0]]=1;
     if(num[0]==0)dp[0][0]=2;
-    
+//     if(num[0]==0)dp[0][0]=2;
+//     else dp[0][0]=1;
+//     if(num[0]!=0 and num[0]<=tar)dp[0][num[0]]=1;
     for(int ind=1;ind<n;ind++){
         for(int sum=0;sum<=tar;sum++){
             int notpick=dp[ind-1][sum];
             int pick=0;
             if(num[ind]<=sum)pick=dp[ind-1][sum-num[ind]];
-            dp[ind][sum] = pick + notpick;
+            dp[ind][sum] = (pick + notpick)%mod;
         }
     }
     return dp[n-1][tar];
     
     //space optimisation
-//     vector<int>prev(tar+1,0),curr(tar+1);
-//     prev[0]=1;
-//     curr[0]=1;
-//     if(num[0]<=tar)prev[num[0]]=1;
+    vector<int>prev(tar+1,0),curr(tar+1);
+    prev[0]=1;
+    prev[num[0]]=1;
+    if(num[0]==0)prev[0]=2;
+//     if(num[0]==0)dp[0][0]=2;
+//     else dp[0][0]=1;
+//     if(num[0]!=0 and num[0]<=tar)dp[0][num[0]]=1;
+    for(int ind=1;ind<n;ind++){
+        for(int sum=0;sum<=tar;sum++){
+            int notpick=prev[sum];
+            int pick=0;
+            if(num[ind]<=sum)pick=prev[sum-num[ind]];
+            curr[sum] = (pick + notpick)%mod;
+        }
+        prev=curr;
+    }
+    return prev[tar];
     
-//     for(int ind=1;ind<n;ind++){
-//         for(int sum=0;sum<=tar;sum++){
-//             int notpick=prev[sum];
-//             int pick=0;
-//             if(num[ind]<=sum)pick=prev[sum-num[ind]];
-
-//             curr[sum] = pick + notpick;
-//         }
-//         prev=curr;
-//     }
-//     return prev[tar];
 }
